@@ -10,7 +10,7 @@ import (
 
 func Test_GetConnInfo(t *testing.T) {
 	userName := "test"
-	passwd := "test"
+	passwd := "test123456"
 	ip := "localhost"
 	port := 3306
 	connStr := fmt.Sprintf("%s:%s@tcp(%s:%d)/", userName, passwd, ip, port)
@@ -43,5 +43,4 @@ func Test_GetConnInfo(t *testing.T) {
 	conn.Query("show databases")
 	connInfo = GetMySQLConnInfoIgnoreErr(conn)
 	t.Log(connInfo)
-
 }
