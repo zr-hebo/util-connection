@@ -28,8 +28,7 @@ func GetMySQLConnInfo(conn *sql.DB) (connInfo string, err error) {
 	cv := reflect.ValueOf(conn).Elem()
 	// fmt.Printf("%#v\n", cv)
 
-	dsnv := cv.FieldByName("dsn")
-	dsnStr := fmt.Sprint(dsnv)
+	dsnStr := getMySQLConnDSN(conn)
 	dsnInfo, err := resolveDsn(dsnStr)
 	if err != nil {
 		return
