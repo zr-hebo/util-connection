@@ -3,7 +3,7 @@ package connassist
 import (
 	"database/sql"
 
-	"github.com/zssky/log"
+	"github.com/dearcode/crab/log"
 )
 
 // CloseConnection 关闭数据库连接
